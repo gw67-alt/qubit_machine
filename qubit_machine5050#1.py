@@ -349,16 +349,13 @@ class MainWindow(QMainWindow):
             
                 guess_message_timeout = 4000 # milliseconds
                 
-
+                client = SharedSequenceClient()
+                # Get the current sequence
+                old_sequence = self.sequence
+                self.sequence = client.get_sequence()
                 if is_above or is_below: 
                     
-                    
-                    
-                    client = SharedSequenceClient()
-                    # Get the current sequence
-                    old_sequence = self.sequence
-                    self.sequence = client.get_sequence()
-                    if self.sequence != old_sequence:
+                    if self.sequence:
                         current_preset_output = self.sequence[1] #parallelize
 
                         comparison_text = f"Raw ({current_preset_output}) is {'High' if is_above else 'Low'} Avg ({current_avg:.2f})"
@@ -372,7 +369,7 @@ class MainWindow(QMainWindow):
                                                   
                         self.show_status_message(guess_display_message, guess_message_timeout)
                     else:
-                        self.show_status_message("Preset guess sequence is empty!", guess_message_timeout)
+                        self.show_status_message("Preset guess sequence is unoriginal(sync issue)!", guess_message_timeout)
                 else:
                     equal_message = f"Raw ({raw_value_for_guess}) ~ Avg ({current_avg:.2f}). No preset output."
                     self.show_status_message(equal_message, guess_message_timeout - 1000) # Shorter timeout
