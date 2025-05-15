@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f0f0f0"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="22" text-anchor="middle" font-weight="bold">Diffeomorphic Quantum Measurement System</text>
+  
+  <!-- Main Box -->
+  <rect x="100" y="120" width="600" height="380" fill="#e0e0ff" stroke="#000" stroke-width="3" fill-opacity="0.5"/>
+  
+  <!-- IR Light Sources -->
+  <circle cx="150" cy="90" r="12" fill="#ff6600" stroke="#000" stroke-width="1"/>
+  <circle cx="300" cy="90" r="12" fill="#ff6600" stroke="#000" stroke-width="1"/>
+  <circle cx="450" cy="90" r="12" fill="#ff6600" stroke="#000" stroke-width="1"/>
+  <circle cx="600" cy="90" r="12" fill="#ff6600" stroke="#000" stroke-width="1"/>
+  
+  <!-- IR Light Beams -->
+  <path d="M 150 102 L 150 120" stroke="#ff6600" stroke-width="2" stroke-dasharray="3,3"/>
+  <path d="M 300 102 L 300 120" stroke="#ff6600" stroke-width="2" stroke-dasharray="3,3"/>
+  <path d="M 450 102 L 450 120" stroke="#ff6600" stroke-width="2" stroke-dasharray="3,3"/>
+  <path d="M 600 102 L 600 120" stroke="#ff6600" stroke-width="2" stroke-dasharray="3,3"/>
+  
+  <!-- IR Bath Label -->
+  <text x="375" y="70" font-family="Arial" font-size="14" text-anchor="middle">IR Light Bath and Detector(Probability Escape)</text>
+  
+  <!-- Wave Function Representation -->
+  <path d="M 100 280 
+           Q 150 200, 200 280 
+           Q 250 360, 300 280 
+           Q 350 200, 400 280 
+           Q 450 360, 500 280 
+           Q 550 200, 600 280 
+           Q 650 360, 700 280" 
+    fill="none" stroke="#0066cc" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Optical System -->
+  <g transform="translate(400, 210)">
+    <!-- Lens System -->
+    <ellipse cx="0" cy="0" rx="60" ry="25" fill="none" stroke="#000" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="50" ry="20" fill="none" stroke="#000" stroke-width="1"/>
+    <line x1="-60" y1="0" x2="60" y2="0" stroke="#000" stroke-width="1"/>
+    
+    <!-- Focus Adjustment Mechanism -->
+    <rect x="-10" y="-35" width="20" height="10" fill="#999" stroke="#000"/>
+    <line x1="0" y1="-25" x2="0" y2="-15" stroke="#999" stroke-width="3"/>
+    
+    <!-- Focus Rays -->
+    <line x1="-40" y1="-15" x2="0" y2="90" stroke="#0099ff" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="-20" y1="-15" x2="0" y2="90" stroke="#0099ff" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="0" y1="-15" x2="0" y2="90" stroke="#0099ff" stroke-width="1"/>
+    <line x1="20" y1="-15" x2="0" y2="90" stroke="#0099ff" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="40" y1="-15" x2="0" y2="90" stroke="#0099ff" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+  
+  <!-- Focus Depth Label -->
+  <text x="400" y="140" font-family="Arial" font-size="14" text-anchor="middle">Variable Focus Depth Optical System</text>
+  
+  <!-- Central Sphere -->
+  <circle cx="400" cy="300" r="40" fill="url(#gradientSphere)" stroke="#000" stroke-width="1.5"/>
+  
+  <!-- Gradient for sphere -->
+  <defs>
+    <radialGradient id="gradientSphere" cx="385" cy="285" r="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#9966ff"/>
+      <stop offset="100%" stop-color="#6600cc"/>
+    </radialGradient>
+    
+    <!-- Photonic lattice gradient -->
+    <radialGradient id="latticeGradient" cx="400" cy="300" r="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="rgba(100, 255, 100, 0.7)"/>
+      <stop offset="100%" stop-color="rgba(100, 255, 100, 0.1)"/>
+    </radialGradient>
+    
+    <!-- Diffeomorphic volume pattern -->
+    <pattern id="diffeomorphicPattern" patternUnits="userSpaceOnUse" width="30" height="30" patternTransform="rotate(45)">
+      <path d="M0,15 Q7.5,0 15,15 Q22.5,30 30,15" fill="none" stroke="rgba(0, 100, 255, 0.3)" stroke-width="2"/>
+    </pattern>
+  </defs>
+  
+  <!-- Sphere Label -->
+  <text x="400" y="405" font-family="Arial" font-size="14" text-anchor="middle">Oscillating Sphere</text>
+  
+  <!-- Photonic Lattice Structure -->
+  <!-- Lower points (non-focused region) -->
+  <g id="photonic-lattice">
+    <!-- Lattice grid representation -->
+    <circle cx="400" cy="300" r="120" fill="none" stroke="#33cc33" stroke-width="0.5" stroke-dasharray="5,5"/>
+    <circle cx="400" cy="300" r="100" fill="none" stroke="#33cc33" stroke-width="0.5" stroke-dasharray="5,5"/>
+    <circle cx="400" cy="300" r="80" fill="none" stroke="#33cc33" stroke-width="0.5" stroke-dasharray="5,5"/>
+    
+    <!-- Vertical grid lines -->
+    <line x1="280" y1="300" x2="520" y2="300" stroke="#33cc33" stroke-width="0.5" stroke-dasharray="5,5"/>
+    <line x1="400" y1="180" x2="400" y2="420" stroke="#33cc33" stroke-width="0.5" stroke-dasharray="5,5"/>
+    <line x1="320" y1="220" x2="480" y2="380" stroke="#33cc33" stroke-width="0.5" stroke-dasharray="5,5"/>
+    <line x1="480" y1="220" x2="320" y2="380" stroke="#33cc33" stroke-width="0.5" stroke-dasharray="5,5"/>
+    
+    <!-- Lattice nodes -->
+    <g id="lattice-nodes">
+      <!-- Inner ring -->
+      <circle cx="360" cy="260" r="4" fill="#33cc33"/>
+      <circle cx="440" cy="260" r="4" fill="#33cc33"/>
+      <circle cx="360" cy="340" r="4" fill="#33cc33"/>
+      <circle cx="440" cy="340" r="4" fill="#33cc33"/>
+      
+      <!-- Middle ring -->
+      <circle cx="340" cy="240" r="4" fill="#33cc33"/>
+      <circle cx="400" cy="240" r="4" fill="#33cc33"/>
+      <circle cx="460" cy="240" r="4" fill="#33cc33"/>
+      <circle cx="340" cy="300" r="4" fill="#33cc33"/>
+      <circle cx="460" cy="300" r="4" fill="#33cc33"/>
+      <circle cx="340" cy="360" r="4" fill="#33cc33"/>
+      <circle cx="400" cy="360" r="4" fill="#33cc33"/>
+      <circle cx="460" cy="360" r="4" fill="#33cc33"/>
+      
+      <!-- Outer ring -->
+      <circle cx="320" cy="220" r="4" fill="#33cc33"/>
+      <circle cx="370" cy="220" r="4" fill="#33cc33"/>
+      <circle cx="430" cy="220" r="4" fill="#33cc33"/>
+      <circle cx="480" cy="220" r="4" fill="#33cc33"/>
+      
+      <circle cx="320" cy="270" r="4" fill="#33cc33"/>
+      <circle cx="320" cy="330" r="4" fill="#33cc33"/>
+      
+      <circle cx="480" cy="270" r="4" fill="#33cc33"/>
+      <circle cx="480" cy="330" r="4" fill="#33cc33"/>
+      
+      <circle cx="320" cy="380" r="4" fill="#33cc33"/>
+      <circle cx="370" cy="380" r="4" fill="#33cc33"/>
+      <circle cx="430" cy="380" r="4" fill="#33cc33"/>
+      <circle cx="480" cy="380" r="4" fill="#33cc33"/>
+    </g>
+  </g>
+  
+  <!-- Diffeomorphic Volume Representation -->
+  <path d="M 320 220 C 350 200, 450 200, 480 220 C 510 240, 510 340, 480 380 C 450 400, 350 400, 320 380 C 290 340, 290 240, 320 220 Z" 
+        fill="url(#diffeomorphicPattern)" fill-opacity="0.5" stroke="#6666ff" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Focus vs Non-Focus Regions -->
+  <path d="M 340 240 C 360 230, 440 230, 460 240 C 480 260, 480 340, 460 360 C 440 370, 360 370, 340 360 C 320 340, 320 260, 340 240 Z" 
+        fill="rgba(0, 153, 255, 0.2)" stroke="#0099ff" stroke-width="2"/>
+  
+  <!-- Measurement System -->
+  <g transform="translate(400, 450)">
+    <rect x="-100" y="0" width="200" height="30" fill="#cccccc" stroke="#000" stroke-width="2"/>
+    <text x="0" y="20" font-family="Arial" font-size="14" text-anchor="middle">Diffeomorphism Detector</text>
+    
+    <!-- Connectors from detector to lattice -->
+    <line x1="-80" y1="0" x2="-80" y2="-30" stroke="#333" stroke-width="1"/>
+    <line x1="-40" y1="0" x2="-40" y2="-30" stroke="#333" stroke-width="1"/>
+    <line x1="0" y1="0" x2="0" y2="-30" stroke="#333" stroke-width="1"/>
+    <line x1="40" y1="0" x2="40" y2="-30" stroke="#333" stroke-width="1"/>
+    <line x1="80" y1="0" x2="80" y2="-30" stroke="#333" stroke-width="1"/>
+  </g>
+  
+  <!-- Arrows Representing Diffeomorphism -->
+  <g id="diffeomorphism-arrows">
+    <path d="M 350 260 Q 370 250, 380 270" fill="none" stroke="#ff00ff" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <path d="M 370 290 Q 390 270, 410 280" fill="none" stroke="#ff00ff" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <path d="M 420 320 Q 430 300, 450 310" fill="none" stroke="#ff00ff" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <path d="M 390 340 Q 410 330, 420 350" fill="none" stroke="#ff00ff" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <path d="M 350 310 Q 360 330, 380 320" fill="none" stroke="#ff00ff" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Arrowhead definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff00ff"/>
+    </marker>
+  </defs>
+  
+  <!-- Labels -->
+  <text x="400" y="250" font-family="Arial" font-size="14" text-anchor="middle">Focused Region</text>
+  <text x="300" y="300" font-family="Arial" font-size="14" text-anchor="middle">Photonic</text>
+  <text x="300" y="320" font-family="Arial" font-size="14" text-anchor="middle">Lattice</text>
+  <text x="520" y="290" font-family="Arial" font-size="14" text-anchor="middle">Diffeomorphic</text>
+  <text x="520" y="310" font-family="Arial" font-size="14" text-anchor="middle">Volume</text>
+  <text x="430" y="380" font-family="Arial" font-size="12" text-anchor="middle" fill="#ff00ff">Diffeomorphism Vectors</text>
+  
+  <!-- Legend -->
+  <rect x="600" y="50" width="180" height="140" fill="white" stroke="#000" stroke-width="1"/>
+  <text x="610" y="70" font-family="Arial" font-size="12" font-weight="bold">Legend:</text>
+  
+  <line x1="610" y1="85" x2="640" y2="85" stroke="#0066cc" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="645" y="89" font-family="Arial" font-size="12">Wave Function</text>
+  
+  <circle cx="625" cy="105" r="5" fill="#33cc33"/>
+  <text x="645" y="109" font-family="Arial" font-size="12">Photonic Lattice Node</text>
+  
+  <rect x="610" y="117" width="30" height="10" fill="rgba(0, 153, 255, 0.2)" stroke="#0099ff" stroke-width="1.5"/>
+  <text x="645" y="126" font-family="Arial" font-size="12">Focused Region</text>
+  
+  <path d="M 610 140 Q 620 130, 630 140" stroke="#ff00ff" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <text x="645" y="144" font-family="Arial" font-size="12">Diffeomorphism</text>
+  
+  <rect x="610" y="155" width="30" height="10" fill="url(#diffeomorphicPattern)" stroke="#6666ff" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="645" y="165" font-family="Arial" font-size="12">Diffeomorphic Volume</text>
+</svg>
