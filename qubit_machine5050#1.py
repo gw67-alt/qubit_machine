@@ -356,7 +356,7 @@ class MainWindow(QMainWindow):
                 self.i = int(self.sequence[-1])
                 if is_above or is_below: 
                     
-                    if self.sequence and self.sequence[-1] == str(self.i):
+                    if self.sequence and int(self.sequence[-1]) == int(self.i):
                         self.i += 1
                         current_preset_output = self.sequence[qubit_number] #parallelize, set qubit count....
 
