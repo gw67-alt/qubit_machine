@@ -363,19 +363,19 @@ class MainWindow(QMainWindow):
                         comparison_text = f"Raw ({current_preset_output}) is {'1' if is_above else '0'} Avg ({current_avg:.2f})"
 
                         guess_display_message = f"Analysis: {comparison_text}. --> Preset Output: {current_preset_output}"
-                        calc = 1 if is_above else 0
-                        if calc*9 == 0: #superposition example, change '== 9' to either 9 or 1 yet still watch the credits rise(of questionable stability...)
+                        
+                        if current_preset_output == '1' if is_above else '0':
                             game_state["credits"] += WIN_CREDITS  
                         else:
                             game_state["credits"] -= WIN_CREDITS  
-                        print(game_state["credits"])
-                      
+                                                  
                         self.show_status_message(guess_display_message, guess_message_timeout)
                     else:
                         self.show_status_message("Preset guess sequence is unoriginal(sync issue)!", guess_message_timeout)
                 else:
                     equal_message = f"Raw ({raw_value_for_guess}) ~ Avg ({current_avg:.2f}). No preset output."
                     self.show_status_message(equal_message, guess_message_timeout - 1000) # Shorter timeout
+                print(game_state["credits"])
                 self.guess_trigger_sample_counter = 0
 
     def show_status_message(self, message, timeout=0): 
@@ -387,8 +387,8 @@ class MainWindow(QMainWindow):
             self.show_status_message("STATE: Waiting for Reference. Aim and press 'N'.")
             self.clear_chart_data()
         elif state == AppState.STATE_TRACKING:
-            self.show_status_message("STATE: Tracking active,cresits restored. Press 'N' to reset.")
-            game_state["credits"] = STARTING_CREDITS
+            self.show_status_message("STATE: Tracking active. Press 'N' to reset.")
+
     def clear_chart_data(self):
         self.raw_match_history.clear()
         self.avg_match_history.clear()
