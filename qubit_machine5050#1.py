@@ -9,7 +9,7 @@ import pyqtgraph as pg
 from collections import deque
 import random
 raw_value_for_guess = 2
-
+qubit_number = 1
 STARTING_CREDITS = 10000
 COST_PER_GUESS = 1
 WIN_CREDITS = 150
@@ -175,7 +175,7 @@ class OpenCVThread(QThread):
         self.running = True
         self.initialize_features()
 
-        cap = cv2.VideoCapture(1)
+        cap = cv2.VideoCapture(qubit_number)
         if not cap.isOpened():
             self.status_message.emit("Error: Cannot open camera.")
             self.running = False
@@ -298,7 +298,7 @@ class MainWindow(QMainWindow):
 
         self.guess_trigger_sample_counter = 0
         self.sequence = []
-
+        self.i = 0
         controls_chart_layout.addWidget(self.match_chart_widget)
         main_layout.addLayout(controls_chart_layout, 3) 
 
@@ -353,10 +353,12 @@ class MainWindow(QMainWindow):
                 # Get the current sequence
                 old_sequence = self.sequence
                 self.sequence = client.get_sequence()
+                self.i = int(self.sequence[-1])
                 if is_above or is_below: 
                     
-                    if self.sequence:
-                        current_preset_output = self.sequence[1] #parallelize
+                    if self.sequence and self.sequence[-1] == str(self.i):
+                        self.i += 1
+                        current_preset_output = self.sequence[qubit_number] #parallelize, set qubit count....
 
                         comparison_text = f"Raw ({current_preset_output}) is {'1' if is_above else '0'} Avg ({current_avg:.2f})"
 

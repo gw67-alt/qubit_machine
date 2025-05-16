@@ -113,8 +113,11 @@ if __name__ == "__main__":
         print(f"Shared memory block name: {manager.name}")
         print("Keep this script running to maintain the shared memory.")
         print("Press Ctrl+C to exit and clean up.")
-        
+        i = 0
         # Keep the script running
+        print("25 seconds until startup, please initialise qubits.")
+        time.sleep(25)
+
         while True:
             array = ["1", "0"]
             original_array = array[:] # Create a shallow copy of the original array
@@ -125,9 +128,12 @@ if __name__ == "__main__":
                 print("RANDOMIZED!")
             else:
                 print("NOT randomized")
+            load.append(i)
             manager.set_sequence(load)
+            
             print(f"Sequence updated to: {load}")
-            time.sleep(5)
+            time.sleep(0.5)
+            i+=1
     finally:
         # Clean up
         manager.close()
