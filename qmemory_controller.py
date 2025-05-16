@@ -116,7 +116,7 @@ if __name__ == "__main__":
         
         # Keep the script running
         while True:
-            array = ["High", "Low"]
+            array = ["1", "0"]
             original_array = array[:] # Create a shallow copy of the original array
             load = array
             random.shuffle(load)

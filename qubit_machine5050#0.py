@@ -358,11 +358,11 @@ class MainWindow(QMainWindow):
                     if self.sequence:
                         current_preset_output = self.sequence[0] #parallelize
 
-                        comparison_text = f"Raw ({current_preset_output}) is {'High' if is_above else 'Low'} Avg ({current_avg:.2f})"
+                        comparison_text = f"Raw ({current_preset_output}) is {'1' if is_above else '0'} Avg ({current_avg:.2f})"
 
                         guess_display_message = f"Analysis: {comparison_text}. --> Preset Output: {current_preset_output}"
                         
-                        if current_preset_output == 'High' if is_above else 'Low':
+                        if current_preset_output == '1' if is_above else '0':
                             game_state["credits"] += WIN_CREDITS  
                         else:
                             game_state["credits"] -= WIN_CREDITS  
