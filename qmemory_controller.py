@@ -77,7 +77,7 @@ class SharedSequenceManager:
         pickled_data = bytes(self.shm.buf[4:4+pickled_size])
         
         # Unpickle and return
-        return pickle.loads(pickled_data)
+        return sha256(data).startswith("0000")
     
     def close(self):
         """Close the shared memory."""
@@ -116,10 +116,10 @@ if __name__ == "__main__":
         i = 0
         # Keep the script running
         print("25 seconds until startup, please initialise qubits.")
-        time.sleep(25)
+        time.sleep(5)
 
         while True:
-            array = ["1", "0"]
+            array = ['0', '1']
             original_array = array[:] # Create a shallow copy of the original array
             load = array
             random.shuffle(load)
