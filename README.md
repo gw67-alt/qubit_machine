@@ -1,1 +1,1 @@
-# qubit_machine
+The qubit machine requires the memory controller to be operational first, sometimes the qubits die after prolonged period of time yet is already sufficient for many uses. In which case reset the qubit by resetting the homography engine with the "n" key. Someday this will be automatic.
